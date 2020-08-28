@@ -1,4 +1,4 @@
-* Spring 2020 - Lab 11
+* Fall 2020 - Lab 01
 
 * Last name:
 
@@ -14,93 +14,15 @@
 - Fill in your name and GitHub username on top.
 - Use the Notes section to add any notes to the instructor.
 - The main lab description can be found here:
-  https://maryash.github.io/135/labs/lab_11.html 
+  https://maryash.github.io/135/labs/lab_01.html 
 
 * Daedalus specific instructions (changes from main spec):
 
-Doctest based unit tests are required for this lab.
+We *will not* be using Gradescope for our labs. For this lab, for each
+task (A through D) create the program files ~smaller.cpp~,
+~smaller3.cpp~, ~leap.cpp~, and ~month.cpp~. Each should work as
+specified in the main lab page. Add all four ~.cpp~ files to the
+assignment repository, commit and push them.
 
-Make sure to add the .h files as appropriate in the Makefile as
-well  as include them in the files that need them (see the previous
-lab for an example and use the mailing list / slack for assistance if
-needed).
-
-* Class organization
-
-When you create a class, you traditionally put the specification int
-the .h file and the implementation in the .cpp file. 
-
-For example, from the Profile class, the specification would go in
-Particle.h
-
-#+NAME: Particle.h
-#+begin_src c++
-class Particle {
-private:
-  double x;  // position, 2D coordinates
-  double y;
-  double vx; // velocity
-  double vy;
-public:
-  // accessor functions for the current position of the particle
-  double getX();
-  double getY();
-  // move the particle
-  void move(double dt);
-  // Constructor. Called to initialize private member variables
-  // when a particle object gets created
-  Particle(double posx, double posy, double velx, double vely);
-  // Default constructor, will assume pos=(0,0), vel=(0,0)
-  Particle();
-};
-
-#+end_src
-
-and the implementation in Particle.cpp
-
-#+NAME: Particle.cpp
-#+begin_src c++
-double Particle::getX() { 
-  return x; 
-}
-double Particle::getY() { 
-  return y; 
-}
-void Particle::move(double dt) {
-  x += vx * dt;  y += vy * dt;
-}
-Particle::Particle(double posx, double posy, double velx, double vely) {
-  x = posx;   y = posy;
-  vx = velx;  vy = vely;
-}
-Particle::Particle() {
-  x = 0;   y = 0;
-  vx = 0;  vy = 0;
-}
-#+end_src
-
-You would then include ~Particle.h~ in the files that need it (such as
-main.cpp) and you'd also specify them as needed in the
-Makefile. 
-
-* IMPORTANT Makefile notes
-
-The Makefile is set up for main and the first class ~Profile~. You
-will have to modify the Makefile as you add the remaining functionality
-
-* All Tasks
-
-Write a single program (and tests) for this lab. Use a single .cpp/.h
-combination for each class as described above.
-
-You should but the code specified in the main lab into main.cpp. Note
-that this lab doesn't have a need for funcs.cpp
-
-Remember that you should write unit tests for this using doctests. 
-
-As usual the Bonus task is optional.
-
-
-
-
+Make sure to test each program to make sure it works correctly.
 
